@@ -55,7 +55,9 @@ gulp.task('jshint', function() {
 gulp.task('inject', function() {
     var sources = gulp.src(['./app/scripts/**/*.js', './app/stylesheets/**/*.css']);
     return gulp.src('index.html', { cwd: './app' })
-        .pipe(inject(sources))
+        .pipe(inject(sources,{
+            ignorePath: '/app'
+        }))
         .pipe(gulp.dest('./app'));
 });
 

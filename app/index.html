@@ -3,16 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/stylesheets/main.css">
+    <base href="/">
     <!-- bower:css -->
     <!-- endbower -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="/app/stylesheets/main.css">
     <!-- endinject -->
-    <title>Ejemplo</title>
+    <title>My blog</title>
 </head>
 
-<body>
+<body ng-app="blog">
     <!--bower:js-->
     <script src="lib/angular/angular.js"></script>
     <script src="lib/jquery/dist/jquery.js"></script>
@@ -21,9 +20,18 @@
     <script src="lib/angular-resource/angular-resource.js"></script>
     <!--endbower-->
     <!--inject:js-->
-    <script src="/app/scripts/main.js"></script>
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/controllers.js"></script>
+    <script src="/scripts/services.js"></script>
     <!--endinject-->
-    Hola Mundo!
+    <div class="container-fluid">
+        <div class="row">
+            <aside class="col-sm-3">
+                <a ng-href="/new">Crear Entrada</a>
+            </aside>
+            <section class="col-sm-9" ng-view></section>
+        </div>
+    </div>
 </body>
 
 </html>
